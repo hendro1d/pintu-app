@@ -1,0 +1,74 @@
+/* Responsive Layout */
+.hamburger {
+  display: block;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 4px;
+  line-height: 1;
+  color: var(--text-main);
+  border-radius: 4px;
+  margin-right: 12px;
+}
+.hamburger:hover {
+  background-color: #f3f4f6;
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar {
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+.main-content {
+  transition: margin-left 0.3s ease;
+}
+
+/* Desktop Toggled State (Hide Sidebar) */
+.sidebar-toggle-checkbox:checked ~ .app-container .sidebar {
+  transform: translateX(-100%);
+}
+.sidebar-toggle-checkbox:checked ~ .app-container .main-content {
+  margin-left: 0;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .topbar {
+    padding: 0 16px;
+  }
+  .content-wrapper {
+    padding: 16px;
+  }
+  .filter-bar {
+    flex-direction: column;
+  }
+  
+  /* Mobile Toggled State (Show Sidebar) */
+  .sidebar-toggle-checkbox:checked ~ .app-container .sidebar {
+    transform: translateX(0);
+  }
+  .sidebar-toggle-checkbox:checked ~ .app-container .sidebar-overlay {
+    display: block;
+    opacity: 1;
+  }
+  /* Prevent main-content margin from changing on mobile toggle */
+  .sidebar-toggle-checkbox:checked ~ .app-container .main-content {
+    margin-left: 0;
+  }
+}
