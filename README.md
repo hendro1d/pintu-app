@@ -1,3 +1,5 @@
+<img width="1920" height="827" alt="image" src="https://github.com/user-attachments/assets/baa58ab9-0623-48ff-b939-b2a83fa2b94f" />
+
 # PINTU (Pusat Integrasi Tautan Utama)
 
 PINTU adalah sebuah aplikasi portal (*dashboard*) terpusat yang dirancang untuk mengintegrasikan dan memantau status berbagai tautan aplikasi lain. Aplikasi ini dibangun menggunakan **Next.js** dan menggunakan basis data **MySQL**.
